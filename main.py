@@ -1,4 +1,4 @@
-
+from fastapi import FastAPI
 import asyncio
 import websockets
 import json
@@ -9,7 +9,7 @@ import warnings
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.preprocessing import StandardScaler
 import logging
-
+app = FastAPI()
 warnings.filterwarnings('ignore')
 
 class DerivTradingBot:
@@ -524,4 +524,6 @@ async def main():
     await bot.run()
 
 if __name__ == "__main__":
+    import uvicorn
     asyncio.run(main())
+    uvicorn.run(app, host="0.0.0.0", port=8000)
