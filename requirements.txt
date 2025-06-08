@@ -5,3 +5,4 @@ statsmodels
 scikit-learn 
 asyncio
 uvicorn
+fastapi
