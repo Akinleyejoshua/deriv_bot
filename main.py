@@ -522,9 +522,6 @@ async def main():
 
     # Run the bot
     await bot.run()
-    
-@app.get("/")
-async def start():
-    await (main())
-    return True
+
+asyncio.run(main())
     
