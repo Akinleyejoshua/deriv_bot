@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 import websockets
 import json
@@ -11,6 +12,12 @@ from sklearn.preprocessing import StandardScaler
 import logging
 app = FastAPI()
 warnings.filterwarnings('ignore')
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*', ''],
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 class DerivTradingBot:
     def __init__(self):
