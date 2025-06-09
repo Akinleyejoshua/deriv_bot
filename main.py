@@ -526,4 +526,5 @@ async def main():
 @app.get("/")
 async def start():
     await (main())
+    return True
     
