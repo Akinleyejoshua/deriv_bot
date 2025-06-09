@@ -522,8 +522,8 @@ async def main():
 
     # Run the bot
     await bot.run()
-
-if __name__ == "__main__":
     
-    asyncio.run(main())
+@app.get("/")
+async def start():
+    await (main())
     
