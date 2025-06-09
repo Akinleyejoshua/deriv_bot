@@ -523,5 +523,8 @@ async def main():
     # Run the bot
     await bot.run()
 
-main()
+@app.get("/")
+async def root():
+    await main()
+    return "started"
     
