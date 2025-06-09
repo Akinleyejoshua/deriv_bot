@@ -509,7 +509,7 @@ async def main():
         duration=1,  # 5 ticks
         duration_unit="t",  # ticks
         stake_amount=1000.0,  # $1 per trade
-        max_trades=100,  # Maximum number of trades
+        max_trades=100000000000,  # Maximum number of trades
         trades_per_signal=50  # Trades per signal
     )
 
@@ -524,6 +524,6 @@ async def main():
     await bot.run()
 
 if __name__ == "__main__":
-    import uvicorn
+    
     asyncio.run(main())
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
