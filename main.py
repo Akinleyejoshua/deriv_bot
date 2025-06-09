@@ -523,5 +523,5 @@ async def main():
     # Run the bot
     await bot.run()
 
-asyncio.run(main())
+main()
     
