@@ -532,6 +532,6 @@ async def main():
 
 @app.get("/")
 async def root():
-    await main()
+    asyncio.run(main())
     return "started"
     
