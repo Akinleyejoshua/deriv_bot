@@ -533,5 +533,6 @@ async def main():
 @app.get("/")
 async def root():
     await (main())
+    print("Started")
     return "started"
     
