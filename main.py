@@ -256,7 +256,7 @@ class DerivTradingBot:
         # Determine trade direction
         price_diff = (prediction - current_price) / current_price
         print(price_diff)
-        if abs(price_diff) < 0.009:  # Too small movement
+        if abs(price_diff) < 0.0000000009:  # Too small movement
             return None, "Predicted movement too small"
 
         direction = "CALL" if price_diff > 0 else "PUT"
