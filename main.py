@@ -259,7 +259,7 @@ class DerivTradingBot:
         if abs(price_diff) < 0.000000009:  # Too small movement
             return None, "Predicted movement too small"
 
-        direction = "CALL" if price_diff > -0.00000009 else "PUT"
+        direction = "CALL" if price_diff > 0.0009 else "PUT"
         return direction, f"{market_condition} market, confidence: {confidence:.3f}"
 
     async def place_trade(self, direction: str, reason: str):
