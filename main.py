@@ -515,7 +515,7 @@ async def main():
         symbol="R_50",  # Synthetic index
         duration=1,  # 5 ticks
         duration_unit="t",  # ticks
-        stake_amount=100.0,  # $1 per trade
+        stake_amount=1000.0,  # $1 per trade
         max_trades=100000000000,  # Maximum number of trades
         trades_per_signal=10  # Trades per signal
     )
