@@ -256,10 +256,10 @@ class DerivTradingBot:
         # Determine trade direction
         price_diff = (prediction - current_price) / current_price
         print(price_diff)
-        if abs(price_diff) < 0.0000000009:  # Too small movement
+        if abs(price_diff) < 0.000000009:  # Too small movement
             return None, "Predicted movement too small"
 
-        direction = "CALL" if price_diff > 0 else "PUT"
+        direction = "CALL" if price_diff > 0.01 else "PUT"
         return direction, f"{market_condition} market, confidence: {confidence:.3f}"
 
     async def place_trade(self, direction: str, reason: str):
@@ -515,7 +515,7 @@ async def main():
         symbol="R_50",  # Synthetic index
         duration=1,  # 5 ticks
         duration_unit="t",  # ticks
-        stake_amount=10000.0,  # $1 per trade
+        stake_amount=100.0,  # $1 per trade
         max_trades=100000000000,  # Maximum number of trades
         trades_per_signal=10  # Trades per signal
     )
